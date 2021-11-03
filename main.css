@@ -90,6 +90,7 @@ p {
     justify-content: space-between;
     padding: 16px;
     transition: all var(--animation-duration) ease-in-out;
+    z-index: 1;
 }
 
 #navbar.navbar--dark {
@@ -114,15 +115,14 @@ p {
     cursor: pointer;
 }
 
-.navbar__menu__item.active {
+.navbar__menu__item:hover {
     border: 1px solid var(--color-white);
     border-radius: var(--size-border-radius);
-}
-
-.navbar__menu__item:hover {
     background-color: var(--color-dark-pink);
     border-radius: var(--size-border-radius);
 }
+
+
 
 .navbar__toggle-btn {
     position: absolute;
