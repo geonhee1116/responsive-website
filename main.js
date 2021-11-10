@@ -25,17 +25,51 @@ navbarMenu.addEventListener("click", (event)=> {
     if (link == null) {
         return;
     }
+    navbarMenu.classList.remove("open");
     scrollIntoView(link);
+
 });
 
 //contact me 버튼 이동하기
+const contactMeBtn = document.querySelector(".home__contact");
+contactMeBtn.addEventListener("click", () => {
+    
+    scrollIntoView("#contact");
+});
+
+// home 투명도 조절
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", ()=> {
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+//햄버거 바 메뉴 
+
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", ()=> {
+    navbarMenu.classList.toggle("open");
+});
+
+// arrow up 버튼 이동하기
+const arrowup = document.querySelector(".arrow-up");
+arrowup.addEventListener("click", ()=> {
+    scrollIntoView("#home");
+});
+
+// arrow up 투명도 조절
+
+var max = 1;
+const arrowupHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", ()=> {
+    if (max => arrowupHeight) {
+        arrowup.style.opacity =+ window.scrollY / arrowupHeight / 10;
+    }
+});
+
 
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({ behavior : 'smooth'});
 }
 
-const contactMe = document.querySelector(".home__contact");
-contactMe,addEventListener("click", () => {
-    scrollIntoView("#contact");
-});

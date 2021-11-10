@@ -113,6 +113,7 @@ p {
     margin:  0 4px;
     color:  var(--color-white);
     cursor: pointer;
+    border: 1px solid transparent;
 }
 
 .navbar__menu__item:hover {
@@ -494,10 +495,14 @@ p {
         
     }
 
+    .arrow-up {
+        display: block;
+    }
 
 #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
     
 }
 
@@ -506,6 +511,11 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+    
+}
+
+.navbar__menu.open {
+    display: block;
 }
 
 .about_majors {
