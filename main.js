@@ -59,13 +59,25 @@ arrowup.addEventListener("click", ()=> {
 
 // arrow up 투명도 조절
 
-var max = 1;
-const arrowupHeight = home.getBoundingClientRect().height;
-document.addEventListener("scroll", ()=> {
-    if (max => arrowupHeight) {
-        arrowup.style.opacity =+ window.scrollY / arrowupHeight / 10;
+//화살표
+const scrollBtn = document.querySelector('.arrow-up') ;
+
+
+window.addEventListener('scroll', () => {
+    if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        scrollBtn.style.display = 'block' ;
     }
-});
+    else {
+        scrollBtn.style.display = 'none' ;
+    }
+})
+scrollBtn.addEventListener('click' , () => {
+    window.scroll({
+        top: 0 ,
+        behavior: "smooth"
+    })
+})
+
 
 
 function scrollIntoView(selector) {
